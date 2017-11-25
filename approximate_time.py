@@ -17,7 +17,7 @@ def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
     tweet_co: coordinates of input location
 
     OUTPUT
-    time of location utc datetime
+    time of location in epoch
     """
     start_time_epoch = datetime.strptime(start_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
     finish_time_epoch = datetime.strptime(finish_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
@@ -26,6 +26,6 @@ def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
 
     result_time_epoch = (finish_time_epoch + start_time_epoch * delta) / (1 + delta)
 
-    return datetime.utcfromtimestamp(result_time_epoch).strftime("%a %b %d %H:%M:%S %z %Y")
+    return result_time_epoch
 
 print (approximate_time(start_co, start_time, finish_co, finish_time, tweet_co))
