@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Coordinate(object):
     delta = 0.0001
     
@@ -25,8 +28,8 @@ class Coordinate(object):
         return self.x - other_coord.x <= self.delta and self.y - other_coord.y <= self.delta
 
 
-def coord_in_array(array, coord: Coordinate) -> bool:
-    for other_coord in array:
+def coord_in_array(coords: List[Coordinate], coord: Coordinate) -> bool:
+    for other_coord in coords:
         if other_coord.similar(coord):
             return True
     return False
