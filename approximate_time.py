@@ -4,7 +4,7 @@ from datetime import datetime
 start_co = [51.4952103,-0.1460866]
 finish_co = [50.8296233,-0.143276]
 start_time = "Wed Aug 27 13:08:45 +0000 2008"
-finish_time = "Wed Aug 27 14:08:45 +0000 2008"
+finish_time = "Thu Aug 28 14:08:45 +0000 2008"
 tweet_co = [51.087290, -0.160528]
 
 def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
@@ -17,7 +17,7 @@ def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
     tweet_co: coordinates of input location
 
     OUTPUT
-    time of location in epoch
+    time of location utc datetime
     """
     start_time_epoch = datetime.strptime(start_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
     finish_time_epoch = datetime.strptime(finish_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
