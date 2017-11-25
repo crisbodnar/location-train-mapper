@@ -12,21 +12,20 @@ def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
     INPUTS
     start_co: coordinates of start location
     finish_co: coordinates of finish location
-    start_time: start time in epoch
-    finish_time: finish time in epoch
+    start_time: start time in utc string
+    finish_time: finish time in utc string
     tweet_co: coordinates of input location
 
     OUTPUT
-    time of location in epoch
+    time of location utc datetime
     """
+    start_time_epoch = datetime.strptime(start_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
+    finish_time_epoch = datetime.strptime(finish_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
+
     delta = (finish_co[0] - tweet_co[0]) / (tweet_co[0] - start_co[0])
-    return (finish_time + start_time * delta) / (1 + delta)
 
-start_time_epoch = datetime.strptime(start_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
-finish_time_epoch = datetime.strptime(finish_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
+    result_time_epoch = (finish_time_epoch + start_time_epoch * delta) / (1 + delta)
 
-query_time_epoch = (approximate_time(start_co, start_time_epoch, finish_co, finish_time_epoch, tweet_co))
+    return datetime.utcfromtimestamp(result_time_epoch).strftime("%a %b %d %H:%M:%S %z %Y")
 
-query_time = (datetime.utcfromtimestamp(query_time_epoch).strftime("%a %b %d %H:%M:%S %z %Y"))
-
-print (query_time)
+print (approximate_time(start_co, start_time, finish_co, finish_time, tweet_co))
