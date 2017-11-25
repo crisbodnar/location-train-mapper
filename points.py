@@ -27,9 +27,13 @@ class Coordinate(object):
     def similar(self, other_coord) -> bool:
         return self.x - other_coord.x <= self.delta and self.y - other_coord.y <= self.delta
 
+    def __repr__(self):
+        return "[{}, {}]".format(self.x, self.y)
+
 
 def coord_in_array(coords: List[Coordinate], coord: Coordinate) -> bool:
     for other_coord in coords:
         if other_coord.similar(coord):
             return True
     return False
+
