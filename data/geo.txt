@@ -1,0 +1,23 @@
+{u'full_name': u'Reading, England', u'url': u'https://api.twitter.com/1.1/geo/id/5028e25dc94f3898.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-1.065041, 51.4123385], [-0.8990196, 51.4123385], [-0.8990196, 51.4927093], [-1.065041, 51.4927093]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'5028e25dc94f3898', u'name': u'Reading'}
+
+{u'full_name': u'London, England', u'url': u'https://api.twitter.com/1.1/geo/id/5d838f7a011f4a2d.json', u'country': u'United Kingdom', u'place_type': u'admin', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.510364798739281, 51.2867019756122], [0.334043461659515, 51.2867019756122], [0.334043461659515, 51.6918240878432], [-0.510364798739281, 51.6918240878432]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'5d838f7a011f4a2d', u'name': u'London'}
+
+
+{u'full_name': u'Whyteleafe, South East', u'url': u'https://api.twitter.com/1.1/geo/id/34d7d24e8dd0f63a.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.110331, 51.2613427], [-0.0375749, 51.2613427], [-0.0375749, 51.322055], [-0.110331, 51.322055]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'34d7d24e8dd0f63a', u'name': u'Whyteleafe'}
+
+{u'full_name': u'Horley, South East', u'url': u'https://api.twitter.com/1.1/geo/id/6863a6b835898771.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.18688, 51.159407], [-0.133837, 51.159407], [-0.133837, 51.188109], [-0.18688, 51.188109]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'6863a6b835898771', u'name': u'Horley'}
+
+{u'full_name': u'Horsham, England', u'url': u'https://api.twitter.com/1.1/geo/id/074898ace1d8ef8a.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.352202, 51.052243], [-0.274807, 51.052243], [-0.274807, 51.0892057], [-0.352202, 51.0892057]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'074898ace1d8ef8a', u'name': u'Horsham'}
+
+
+{u'full_name': u'Basingstoke, England', u'url': u'https://api.twitter.com/1.1/geo/id/7b7101cc1c6f8f88.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-1.1498002, 51.2226126], [-1.039377, 51.2226126], [-1.039377, 51.3030391], [-1.1498002, 51.3030391]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'7b7101cc1c6f8f88', u'name': u'Basingstoke'}
+
+
+@RichardGunston @SouthernRailUK It’s like the ultimate dating service cos you’ve already got plenty in common, for… https://t.co/rNy5hkf1LF
+None
+{u'full_name': u'Basingstoke, England', u'url': u'https://api.twitter.com/1.1/geo/id/7b7101cc1c6f8f88.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-1.1498002, 51.2226126], [-1.039377, 51.2226126], [-1.039377, 51.3030391], [-1.1498002, 51.3030391]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'7b7101cc1c6f8f88', u'name': u'Basingstoke'}
+
+
+@SouthernRailUK why on earth do you still have 4 coach trains? They are NEVER big enough for the demand it’s so stupid 😒
+None
+{u'full_name': u'Croydon, London', u'url': u'https://api.twitter.com/1.1/geo/id/5f73d127c7ccf9d9.json', u'country': u'United Kingdom', u'place_type': u'city', u'bounding_box': {u'type': u'Polygon', u'coordinates': [[[-0.161749, 51.294332], [-0.023517, 51.294332], [-0.023517, 51.42353], [-0.161749, 51.42353]]]}, u'contained_within': [], u'country_code': u'GB', u'attributes': {}, u'id': u'5f73d127c7ccf9d9', u'name': u'Croydon'}
