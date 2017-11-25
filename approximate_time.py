@@ -1,32 +1,32 @@
 #!/usr/bin/env python3.6
+from datetime import datetime
 
 start_co = [51.4952103,-0.1460866]
-end_co = [50.8296233,-0.143276]
-start_time = ["16:57"]
-finish_time = ["15:57"]
+finish_co = [50.8296233,-0.143276]
+start_time = "Wed Aug 27 13:08:45 +0000 2008"
+finish_time = "Wed Aug 27 14:08:45 +0000 2008"
 input_co = [51.087290, -0.160528]
-
-tweet_time_format = "Thu Nov 16 16:25:18 +0000 2017"
-
-
-av_speed = int
-
-total_time = 
 
 def approximate_time(start_co, start_time, finish_co, finish_time, input_co):
     """
     INPUTS
-    start: coordinates of start
-    finish: coordinates of finish
+    start_co: coordinates of start location
+    finish_co: coordinates of finish location
+    start_time: start time in epoch
+    finish_time: finish time in epoch
+    input_co: coordinates of input location
 
     OUTPUT
-    coordinates | INPUTS
-
+    time of location in epoch
     """
-    def format_time(time):
-    	#reformat "15:57" -> 15:57:00
-    	time += ":00"
-    	return time 
+    delta = (finish_co[0] - input_co[0]) / (input_co[0] - start_co[0])
+    return (finish_time + start_time * delta) / (1 + delta)
 
+start_time_epoch = datetime.strptime(start_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
+finish_time_epoch = datetime.strptime(finish_time, "%a %b %d %H:%M:%S %z %Y").timestamp()
 
+query_time_epoch = (approximate_time(start_co, start_time_epoch, finish_co, finish_time_epoch, input_co))
 
+query_time = (datetime.utcfromtimestamp(query_time_epoch).strftime("%a %b %d %H:%M:%S %z %Y"))
+
+print (query_time)
