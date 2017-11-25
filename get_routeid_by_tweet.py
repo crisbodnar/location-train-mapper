@@ -1,4 +1,5 @@
 from approximate_time import approximate_time
+from datetime import datetime
 routes = [[1, [[51.4952103,-0.1460866], [50.8296233,-0.143276]],
             ["Wed Aug 27 13:08:45 +0000 2008", "Wed Aug 27 14:08:45 +0000 2008"]],
         [2, [[51.5052103,-0.1560866], [50.4396233,-0.113276]],
@@ -17,9 +18,10 @@ def get_routeid_by_tweet(routes, tweet):
     routeid of best guess from the tweet
     """
     route_times = []
+    tweet_time_epoch = datetime.strptime(tweet["created_at"], "%a %b %d %H:%M:%S %z %Y").timestamp()
     for route in routes:
-        route_times.append([route[0], approximate_time(route[1][0], route[2][0], route[1][1], route[2][1],
-                tweet["coordinates"])])
+        route_times.append([route[0], abs(approximate_time(route[1][0], route[2][0], route[1][1], route[2][1],
+                tweet["coordinates"]) - tweet_time_epoch)])
     return sorted(route_times, key = lambda x: x[1])
 
 
