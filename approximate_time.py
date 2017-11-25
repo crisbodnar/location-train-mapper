@@ -28,4 +28,5 @@ def approximate_time(start_co, start_time, finish_co, finish_time, tweet_co):
 
     return result_time_epoch
 
-print (approximate_time(start_co, start_time, finish_co, finish_time, tweet_co))
+if __name__ == "__main__":
+    print (approximate_time(start_co, start_time, finish_co, finish_time, tweet_co))
