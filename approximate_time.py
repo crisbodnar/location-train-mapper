@@ -24,7 +24,7 @@ def approximate_time(start_co: Coordinate, start_time: str, finish_co: Coordinat
     start_time_epoch = datetime.strptime(start_time, "%Y-%m-%dT%H:%M").timestamp()
     finish_time_epoch = datetime.strptime(finish_time, "%Y-%m-%dT%H:%M").timestamp()
 
-    interval_time = (finish_time_epoch - start_time_epoch) / (tweet_co.distance(start_co) / start_co.distance(finish_co))
+    interval_time = (finish_time_epoch - start_time_epoch) * (tweet_co.distance(start_co) / start_co.distance(finish_co))
     return start_time_epoch + interval_time
 
     # delta = finish_co.distance(tweet_co.y) / tweet_co.distance(start_co.x)
