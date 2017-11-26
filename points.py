@@ -1,9 +1,7 @@
 from typing import List
-
+import math
 
 class Coordinate(object):
-    delta = 0.0001
-    
     def __init__(self, x, y):
         self._x = x
         self._y = y
@@ -25,7 +23,12 @@ class Coordinate(object):
         self._y = y
 
     def similar(self, other_coord) -> bool:
-        return self.x - other_coord.x <= self.delta and self.y - other_coord.y <= self.delta
+        delta = 0.0001
+        if math.fabs(self.x - other_coord.x) <= delta and math.fabs(self.y - other_coord.y <= delta):
+            print(self)
+            print(other_coord)
+            return True
+        return False
 
     def __repr__(self):
         return "[{}, {}]".format(self.x, self.y)

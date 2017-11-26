@@ -3,25 +3,13 @@
 import json
 import urllib.request
 from points import Coordinate, coord_in_array
-from api import get_stop_trip_uids
+from api import get_near_trip_uids
 
-data_link = "http://journeyplanner.silverrailtech.com/journeyplannerservice/v2/REST/DataSets/UKNationalRailRT/NearbyTransitStops?ApiKey=1333ECBD-2A86-08A5-7168-D325C905A731&GeoCoordinate=52.21650468937126,-1.415133326455713&MaximumDistanceInMetres=30000&WalkSpeed=&MaximumStopsToReturn=&ReturnPolylineInformation=False&Time=2017-11-25T11:45&TimeBand=60&TransactionId=&format=json"
-with urllib.request.urlopen(data_link) as url:
-    data = json.loads(url.read().decode())
 
-uids = []
-stop_uids = []
-stop_paths = data['TransitStopPaths']
+latitude = 52.21650468937126
+longitude = -1.415133326455713
+uids = get_near_trip_uids(latitude, longitude, 30000, '2017-11-25', '11:45', 60)
 
-for stop_path in stop_paths:
-    stop = stop_path['TransitStop']
-    stop_uids.append(stop['StopUid'])
-
-for stop_uid in stop_uids:
-    uids += get_stop_trip_uids(stop_uid)
-
-uids = set(uids)
-print(uids)
 route_path = {}
 
 for uid in uids:
@@ -39,7 +27,7 @@ for uid in uids:
         latitude, longitude = coordinate_pair.split(",")
         route_path[uid].append(Coordinate(float(latitude), float(longitude)))
 
-    our_point = Coordinate(51.5185911, -0.7209129)
+    our_point = Coordinate(52.2865397, -1.5818545)
     if not coord_in_array(route_path[uid], our_point):
         del route_path[uid]
 
