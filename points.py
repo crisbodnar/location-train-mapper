@@ -1,6 +1,7 @@
 from typing import List
 import math
 
+
 class Coordinate(object):
     def __init__(self, x, y):
         self._x = x
@@ -24,11 +25,10 @@ class Coordinate(object):
 
     def similar(self, other_coord) -> bool:
         delta = 0.0001
-        if math.fabs(self.x - other_coord.x) <= delta and math.fabs(self.y - other_coord.y <= delta):
-            print(self)
-            print(other_coord)
-            return True
-        return False
+        return math.fabs(self.x - other_coord.x) <= delta and math.fabs(self.y - other_coord.y) <= delta
+
+    def distance(self, other_ccord) -> float:
+        return math.sqrt((other_ccord.x - self.x)**2 + (other_ccord.y - self.y)**2)
 
     def __repr__(self):
         return "[{}, {}]".format(self.x, self.y)
